@@ -7,9 +7,14 @@ span {
 }
 
 h2 {
-  margin:auto 20px;
+  margin: auto 20px;
 }
 
 button {
-  margin:auto 5px;
+  margin: auto 5px;
+}
+
+.btn-trocar {
+  color: #ffffff;
+  background-color: #578067 !important;
 }
