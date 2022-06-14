@@ -3,49 +3,50 @@
   <div class="container">
     <form [formGroup]="imovelForm">
       <div class="form-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Qual a sua localização?</mat-label>
+  
+          <input matInput placeholder="CEP" formControlName="zipCode" mask="00000-000" />
+  
+          <mat-error *ngIf="imovelForm.get('zipCode')?.invalid"> O CEP deve ter 9 dígitos </mat-error>
+        </mat-form-field> 
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Dê um nome para sua horta!</mat-label>
+  
+          <input matInput #input placeholder="Nome da horta" formControlName="horta" ngModel pattern="[A-zÀ-ú ]+" />
+  
+          <mat-error *ngIf="imovelForm.get('horta')?.invalid"> Preencha com um nome para sua horta </mat-error>
+        </mat-form-field>
+  
         <mat-form-field appearance="fill">
-          <mat-label>Tipo do imóvel</mat-label>
+          <mat-label>Onde vai ficar a horta?</mat-label>
           <mat-select formControlName="type">
-            <mat-option value="Residencial">Residencial</mat-option>
-            <mat-option value="Comercial">Comercial</mat-option>
+            <mat-option value="interno">Em um espaço interno</mat-option>
+            <mat-option value="externo">Em um espaço externo</mat-option>
           </mat-select>
-          <mat-error> Preencha com o tipo do imóvel </mat-error>
+          <mat-hint>Escolha um local que receba ao menos 4h de sol por dia</mat-hint>
+          <mat-error> Preencha com o local da horta </mat-error>
         </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Renda mensal</mat-label>
-
-          <input matInput #input placeholder="Renda mensal" formControlName="income" mask="separator.2"
-            thousandSeparator="." />
-
-          <mat-error> Preencha com a sua renda mensal </mat-error>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Qual seu nível de conhecimento em plantação?</mat-label>
+          <mat-select formControlName="nivel">
+            <mat-option value="Iniciante">Iniciante</mat-option>
+            <mat-option value="Intermediário">Intermediário</mat-option>
+            <mat-option value="Experiente">Experiente</mat-option>
+          </mat-select>
+          <mat-error> Preencha com o seu nível de conhecimento em plantação </mat-error>
         </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Valor do imóvel</mat-label>
-
-          <input matInput #input placeholder="Valor do imóvel" formControlName="value" mask="separator.2"
-            thousandSeparator="." />
-
-          <mat-error> Preencha com o valor do imóvel desejado </mat-error>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Valor da entrada</mat-label>
-
-          <input matInput placeholder="Valor da entrada" formControlName="entry" mask="separator.2"
-            thousandSeparator="." />
-
-          <mat-error> Preencha com no mínimo 20% do valor do imóvel </mat-error>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Em quantas parcelas deseja parcelar?</mat-label>
-
-          <input matInput placeholder="Em quantas parcelas deseja parcelar?" formControlName="installments"
-            mask="000" />
-
-          <mat-error> Preencha com no máximo 360 parcelas </mat-error>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Quantas pessoas vão consumir da sua horta?</mat-label>
+          <mat-select formControlName="consumo">
+            <mat-option value="pequena">1-2</mat-option>
+            <mat-option value="média">3-4</mat-option>
+            <mat-option value="grande">4 ou mais</mat-option>
+          </mat-select>
+          <mat-error> Preencha com o número médio de pessoas que irão consumir da sua horta </mat-error>
         </mat-form-field>
       </div>
     </form>

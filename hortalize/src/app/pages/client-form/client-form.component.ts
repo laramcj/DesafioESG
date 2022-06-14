@@ -38,18 +38,11 @@ export class ClientFormComponent implements OnInit {
     const client: Client = new Client(
       this.clientForm.get('id')?.value,
       this.clientForm.get('name')?.value,
-      this.clientForm.get('job')?.value,
-      this.clientForm.get('cpf')?.value,
       this.clientForm.get('email')?.value,
-      this.clientForm.get('dateBirth')?.value,
-      this.clientForm.get('zipCode')?.value,
-      this.clientForm.get('celPhone')?.value
+      this.clientForm.get('dateBirth')?.value,      
+      this.clientForm.get('celPhone')?.value,
     );
 
-    // if (client == this.clientForm)
-    // return true
-    // else
-    // alert('O seu formulário possui campos inválidos. Tente novamente.');
 
     this.clientStorage.setClient(client);
 
@@ -64,21 +57,10 @@ export class ClientFormComponent implements OnInit {
         Validators.pattern(this.letters),
         Validators.minLength(3),
       ]),
-      job: new FormControl('', [Validators.required]),
-      cpf: new FormControl('', [
-        Validators.required,
-        Validators.pattern(this.useNumber),
-        Validators.minLength(11),
-      ]),
       email: new FormControl('', [Validators.required, Validators.email]),
       dateBirth: new FormControl('', [
         Validators.required,
         AgeValidator.getIdade,
-      ]),
-      zipCode: new FormControl('', [
-        Validators.required,
-        Validators.pattern(this.useNumber),
-        Validators.minLength(8),
       ]),
       celPhone: new FormControl('', [
         Validators.required,

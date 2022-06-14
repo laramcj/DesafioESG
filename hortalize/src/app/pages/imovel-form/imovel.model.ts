@@ -1,11 +1,9 @@
 export class Imovel {
   constructor(
+    public zipcode?: string,
+    public horta?: string,
     public type?: string,
-    public income?: number,
-    public value?: number,
-    public entry?: number,
-    public installments?: number,
-    public approvedValue?: number,
-    public initialInstallment?: number
+    public nivel?: string,
+    public consumo?: string,
   ) {}
 }

@@ -25,6 +25,8 @@ export interface Simulacao {
   styleUrls: ['./imovel-form.component.css'],
 })
 export class ImovelFormComponent implements OnInit {
+  private useNumber = '[0-9]*';
+  private letters = '[A-zÀ-ú ]+';
   imovelForm!: FormGroup;
   totalValue!: number;
   entryValue!: number;
@@ -45,38 +47,12 @@ export class ImovelFormComponent implements OnInit {
 
   navigateApprovedDenied() {
     const imovel: Imovel = new Imovel(
+      this.imovelForm.get('zipCode')?.value,
+      this.imovelForm.get('horta')?.value,
       this.imovelForm.get('type')?.value,
-      this.imovelForm.get('income')?.value,
-      this.imovelForm.get('value')?.value,
-      this.imovelForm.get('entry')?.value,
-      this.imovelForm.get('installments')?.value
+      this.imovelForm.get('nivel')?.value,
+      this.imovelForm.get('consumo')?.value,
     );
-
-    const approvedValue = imovel.value! - imovel.entry!;
-
-    const parcela = this.imovelForm.get('installments')?.value;
-    const taxAccount = 0.1;
-    const ceilIncome = 0.3;
-
-    const initialInstallment =
-      (approvedValue * (100 + taxAccount * (parcela / 12))) / 100 / parcela;
-
-    imovel.initialInstallment = initialInstallment;
-    imovel.approvedValue = approvedValue;
-
-    this.imovelStorage.setImovel(imovel);
-
-    const valuePlusTax =
-      imovel.approvedValue! + imovel.approvedValue! * taxAccount;
-    const maxInstallmentValue = valuePlusTax / imovel.installments!;
-    const minIncomeValue = imovel.income! * ceilIncome;
-
-    if (maxInstallmentValue > minIncomeValue) {
-      this.router.navigate(['denied']);
-    } else {
-      this.router.navigate(['approved']);
-    }
-
     this.onSubmit(imovel);
   }
 
@@ -86,21 +62,16 @@ export class ImovelFormComponent implements OnInit {
     const simulacao: Simulacao = {
       client: {
         name: client.name,
-        job: client.job,
-        cpf: client.cpf,
         email: client.email,
         datebirth: client.datebirth,
-        zipcode: client.zipcode,
         celphone: client.celphone,
       },
       imovel: {
+        zipcode: imovel.zipcode,
+        horta: imovel.horta,
         type: imovel.type,
-        income: imovel.income,
-        value: imovel.value,
-        entry: imovel.entry,
-        installments: imovel.installments,
-        approvedValue: imovel.approvedValue,
-        initialInstallment: imovel.initialInstallment,
+        nivel: imovel.nivel,
+        consumo: imovel.consumo,
       },
     };
 
@@ -122,28 +93,26 @@ export class ImovelFormComponent implements OnInit {
   }
 
   validacaoCampos(simulacao: Simulacao) {
-    //if (simulacao.client.celphone!.length < 11) return false;
-    //if (simulacao.imovel.type != 'Residencial' && 'Comercial') return false;
-    if (simulacao.imovel.income! <= 0) return false;
-    if (simulacao.imovel.value! <= 0) return false;
-    if (simulacao.imovel.entry! <= 0) return false;
-    if (simulacao.imovel.installments! > 360) return false;
+    if (simulacao.imovel.zipcode! == '') return false;
+    if (simulacao.imovel.horta! == '') return false;
     return true;
   }
 
   private criarFormulario() {
     this.imovelForm = this.fb.group({
+      zipCode: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.useNumber),
+        Validators.minLength(8),
+      ]),
+      horta: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.letters),
+        Validators.minLength(3),
+      ]),
       type: new FormControl('', [Validators.required]),
-      income: new FormControl('', [Validators.required]),
-      value: new FormControl('', [Validators.required]),
-      entry: new FormControl('', [
-        Validators.required,
-        ImovelValidator.entryValue,
-      ]),
-      installments: new FormControl('', [
-        Validators.required,
-        ImovelValidator.installmentsNumber,
-      ]),
+      nivel: new FormControl('', [Validators.required]),
+      consumo: new FormControl('', [Validators.required]),
     });
   }
 }
