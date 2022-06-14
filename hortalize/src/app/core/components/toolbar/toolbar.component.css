@@ -14,7 +14,11 @@ button {
   margin: auto 5px;
 }
 
-.btn-trocar {
+.btn-sem {
+  color: #578067;
+}
+
+.btn-cor {
   color: #ffffff;
   background-color: #578067 !important;
 }

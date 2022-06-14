@@ -54,12 +54,12 @@
     <mat-divider></mat-divider>
 
     <div class="footer">
-      <button mat-stroked-button color="primary" class="btn-cancelar" routerLink="/inicial">
+      <button mat-stroked-button color="primary" class="btn-cancelar btn-sem" routerLink="/inicial">
         VOLTAR
       </button>
 
       <button mat-flat-button color="primary" class="btn" [disabled]="imovelForm.invalid" type="submit"
-        class="main__btn" (click)="navigateApprovedDenied()">
+        class="main__btn btn-cor" (click)="navigateApprovedDenied()">
         SIMULAR
       </button>
     </div>

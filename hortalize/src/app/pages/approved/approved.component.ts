@@ -25,8 +25,5 @@ export class ApprovedComponent implements OnInit {
     //this.client = this.clientStorage.getClient();
     this.imovel = this.imovelStorage.getImovel();
     console.log(this.imovel);
-    this.initialInstallment = this.imovel.initialInstallment!;
-
-    this.approvedValue = this.imovel.approvedValue!;
   }
 }
