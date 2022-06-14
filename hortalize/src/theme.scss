@@ -1,0 +1,40 @@
+@import "../node_modules/@angular/material/theming";
+@include mat-core();
+
+$my-primary: mat.define-palette(mat.$my-green-palette, 500);
+
+$my-accent: mat.define-palette(mat.$my-grey-palette, A50, A300, A500);
+
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ )
+));
+$my-theme: mat-light-theme($my-primary, $my-accent, $my-warn);
+@include angular-material-theme($my-theme);
+
+
+$my-green-palette: (
+ 50: #ffffff,
+ 300: #ECF0F1,
+ 500: #578067,
+ 900: #2c533d,
+
+ contrast: (
+    50: #4A4A4A,
+    300: #578067,
+    500: #FFFFFF,
+    900: #FFFFFF,
+   
+ )
+ );
+ 
+$mat-grey-palette: (
+   50: #ECF0F1,
+   300: #767676,
+   500: #4a4a4a,
+   700: #222222,
+   900: #000000,
+);

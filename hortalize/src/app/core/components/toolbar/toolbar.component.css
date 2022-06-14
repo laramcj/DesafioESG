@@ -1,0 +1,15 @@
+span {
+  margin-left: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+h2 {
+  margin:auto 20px;
+}
+
+button {
+  margin:auto 5px;
+}

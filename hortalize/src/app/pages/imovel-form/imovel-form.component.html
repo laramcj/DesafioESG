@@ -1,0 +1,66 @@
+<div class="body">
+  <h2 tabindex="0">Dados do imóvel</h2>
+  <div class="container">
+    <form [formGroup]="imovelForm">
+      <div class="form-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo do imóvel</mat-label>
+          <mat-select formControlName="type">
+            <mat-option value="Residencial">Residencial</mat-option>
+            <mat-option value="Comercial">Comercial</mat-option>
+          </mat-select>
+          <mat-error> Preencha com o tipo do imóvel </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Renda mensal</mat-label>
+
+          <input matInput #input placeholder="Renda mensal" formControlName="income" mask="separator.2"
+            thousandSeparator="." />
+
+          <mat-error> Preencha com a sua renda mensal </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Valor do imóvel</mat-label>
+
+          <input matInput #input placeholder="Valor do imóvel" formControlName="value" mask="separator.2"
+            thousandSeparator="." />
+
+          <mat-error> Preencha com o valor do imóvel desejado </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Valor da entrada</mat-label>
+
+          <input matInput placeholder="Valor da entrada" formControlName="entry" mask="separator.2"
+            thousandSeparator="." />
+
+          <mat-error> Preencha com no mínimo 20% do valor do imóvel </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Em quantas parcelas deseja parcelar?</mat-label>
+
+          <input matInput placeholder="Em quantas parcelas deseja parcelar?" formControlName="installments"
+            mask="000" />
+
+          <mat-error> Preencha com no máximo 360 parcelas </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+
+    <mat-divider></mat-divider>
+
+    <div class="footer">
+      <button mat-stroked-button color="primary" class="btn-cancelar" routerLink="/inicial">
+        VOLTAR
+      </button>
+
+      <button mat-flat-button color="primary" class="btn" [disabled]="imovelForm.invalid" type="submit"
+        class="main__btn" (click)="navigateApprovedDenied()">
+        SIMULAR
+      </button>
+    </div>
+  </div>
+</div>

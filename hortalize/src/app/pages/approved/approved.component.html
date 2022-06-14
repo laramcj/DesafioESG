@@ -1,0 +1,22 @@
+<div class="body">
+  <h2 tabindex="0" class="aprovado">Aprovado</h2>
+  <div class="container">
+    <div tabindex="0" class="card">
+      <h3>Proposta <b aria-label="número">Nº</b> 00001</h3>
+      <img height="97px" width="103px" src="../../../assets/aprovado.png" alt="" />
+      <h2 class="status">STATUS: APROVADO</h2>
+      <mat-divider></mat-divider>
+      <ul>
+        <li>Taxa de 8<b aria-label="porcento">%</b> ao ano para correntistas</li>
+        <li>Taxa de 10<b aria-label="porcento">%</b> ao ano para não correntistas</li>
+        <li>Parcela inicial: {{ initialInstallment | currency: 'BRL' }}</li>
+        <li>Valor total aprovado: {{ approvedValue | currency: 'BRL' }} </li>
+        <li>Seguro Só Vamu Security.</li>
+        <li>Desconto na primeira e na última parcela</li>
+      </ul>
+    </div>
+    <button mat-flat-button color="primary" class="btn" routerLink="/">
+      IR PARA TELA INICIAL
+    </button>
+  </div>
+</div>
