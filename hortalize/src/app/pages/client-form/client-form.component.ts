@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { ClientStorageService } from './client-storage.service';
 
 import { Client } from './client.model';
-import { AgeValidator } from './age-validator';
 
 @Component({
   selector: 'app-client-form',

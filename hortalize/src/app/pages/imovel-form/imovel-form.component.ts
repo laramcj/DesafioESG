@@ -63,7 +63,7 @@ export class ImovelFormComponent implements OnInit {
       client: {
         name: client.name,
         email: client.email,
-        datebirth: client.datebirth,
+        senha: client.senha,
         celphone: client.celphone,
       },
       imovel: {
