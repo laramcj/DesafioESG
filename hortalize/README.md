@@ -5,7 +5,7 @@
 <h3>App Snapshot</h3>
 
 <div>
-<img src="./hortalize/src/assets/Screenshot1.png"  alt="Homepage">
+<img link="https://github.com/laramcj/DesafioESG/blob/main/hortalize/src/assets/Screenshot1.png"  alt="Homepage">
 <img src="./hortalize/src/assets/Screenshot1.png"  alt="Criar conta">
 <img src="./hortalize/src/assets/Screenshot1.png"  alt="Responder formulário">
 <img src="./hortalize/src/assets/Screenshot1.png"  alt="Retorno API">
