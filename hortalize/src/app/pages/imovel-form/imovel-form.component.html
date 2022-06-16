@@ -1,5 +1,5 @@
 <div class="body">
-  <h2 tabindex="0">Dados do imóvel</h2>
+  <!-- <h2 tabindex="0">Dados do imóvel</h2> -->
   <div class="container">
     <form [formGroup]="imovelForm">
       <div class="form-container">
@@ -59,7 +59,7 @@
       </button>
 
       <button mat-flat-button color="primary" class="btn" [disabled]="imovelForm.invalid" type="submit"
-        class="main__btn btn-cor" (click)="navigateApprovedDenied()">
+        class="main__btn btn-cor" routerLink="/approved">
         SIMULAR
       </button>
     </div>
