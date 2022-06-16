@@ -39,7 +39,7 @@ export class ClientFormComponent implements OnInit {
       this.clientForm.get('id')?.value,
       this.clientForm.get('name')?.value,
       this.clientForm.get('email')?.value,
-      this.clientForm.get('dateBirth')?.value,      
+      this.clientForm.get('senha')?.value,      
       this.clientForm.get('celPhone')?.value,
     );
 
@@ -58,9 +58,9 @@ export class ClientFormComponent implements OnInit {
         Validators.minLength(3),
       ]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      dateBirth: new FormControl('', [
+      senha: new FormControl('', [
         Validators.required,
-        AgeValidator.getIdade,
+        Validators.minLength(6),
       ]),
       celPhone: new FormControl('', [
         Validators.required,

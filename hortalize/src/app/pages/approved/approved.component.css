@@ -39,7 +39,7 @@ h3 {
 } */
 
 .status {
-  color: #a5d76e;
+  color: #578067;
   text-align: center;
 }
 
@@ -54,13 +54,12 @@ ul {
 }
 
 .container p{
-  color:#578067;
-
+  color:#578067 ;
 }
 
 button {
   margin: 10px;
-  margin-top: 42px;
+  /* margin-top: 42px; */
   border-radius: 4px;
   width: 228px;
   align-self: center;
@@ -80,13 +79,29 @@ button {
   flex-direction: row;
   /* margin-left:100px; */
   margin:auto;
-  background-color: #578067;
+  background-color: #ECF0F1;
 }
 
-.card1, .card2, .card3{
+.card_planta {
   height: 180px;
   width: 150px;
   background-color:#ffffff;
   border-radius:2px;
-  margin:40px;  
+  margin:40px; 
+}
+
+h4 {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+img {
+  margin-top: -10px;
+  margin-left: 10px;
+}
+
+a {
+  color: #578067;
+  font-style: normal;
+  margin: 5px 35px;
 }

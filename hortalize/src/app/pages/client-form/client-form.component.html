@@ -18,22 +18,13 @@
         <mat-error *ngIf="clientForm.get('email')?.invalid"> Preencha com um email válido </mat-error>
       </mat-form-field>
 
-      <!-- <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline">
         <mat-label>Crie uma senha*</mat-label>
 
-        <input matInput type="text" placeholder="Digite sua senha" formControlName="senha"/>
+        <input matInput type="password" placeholder="Digite sua senha" formControlName="senha"/>
 
         <mat-error *ngIf="clientForm.get('senha')?.invalid"> Preencha com sua senha corretamente </mat-error>
-      </mat-form-field> -->
-
-
-      <mat-form-field appearance="outline">
-        <mat-label>Data de nascimento</mat-label>
-
-        <input matInput type="text" placeholder="Data de nascimento" formControlName="dateBirth" mask="d0/M0/0000" />
-
-        <mat-error *ngIf="clientForm.get('dateBirth')?.invalid"> Preencha com sua data de nascimento </mat-error>
-      </mat-form-field> 
+      </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Celular</mat-label>
