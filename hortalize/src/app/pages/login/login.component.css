@@ -1,0 +1,53 @@
+.body {
+    width: auto;
+    padding: 16px;
+    background-color: #e5e5e5;
+    background-image: url("../../../assets/Vector.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 20%;
+    height: 85vh;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #578067;
+  }
+  
+  .container {
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .conteudo {
+    margin-top: 32px;
+    text-align: center;
+    align-self: center;
+  }
+  
+  mat-form-field {
+    width: 387px;
+    margin-right: 30px;
+  }
+  
+  .footer {
+    margin-top: 16px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-sem {
+    color: #578067;
+  }
+  
+  .btn-cor {
+    color: #ffffff;
+    background-color: #578067;
+  }

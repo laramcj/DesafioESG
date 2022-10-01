@@ -1,0 +1,37 @@
+<div class="body">
+    <h2 tabindex="0" >Faça seu Login para verificar suas connexões e seu Ranking</h2>
+    <div class="container">
+      <form [formGroup]="clientForm">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+  
+          <input matInput placeholder="example@example.com" formControlName="email" />
+  
+          <mat-error *ngIf="clientForm.get('email')?.invalid"> Preencha com um email válido </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Senha*</mat-label>
+  
+          <input matInput type="password" placeholder="Digite sua senha" formControlName="senha"/>
+  
+          <mat-error *ngIf="clientForm.get('senha')?.invalid"> Preencha com sua senha corretamente </mat-error>
+        </mat-form-field>
+  
+      </form>
+  
+      <mat-divider></mat-divider>
+  
+      <div class="footer">
+        <button mat-stroked-button class="btn-cancelar btn-sem" color="primary" routerLink="">
+          CANCELAR
+        </button>
+  
+        <button mat-flat-button color="primary" class="btn btn-cor" (click)="navigateLogin()" [disabled]="clientForm.invalid">
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+  </div>
+  
+

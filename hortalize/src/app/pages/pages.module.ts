@@ -19,6 +19,7 @@ import { ApprovedComponent } from './approved/approved.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ImovelFormComponent } from './imovel-form/imovel-form.component';
 import { MinhaHortaComponent } from './minha-horta/minha-horta.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MinhaHortaComponent } from './minha-horta/minha-horta.component';
     DeniedComponent,
     ApprovedComponent,
     MinhaHortaComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
