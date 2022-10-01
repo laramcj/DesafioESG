@@ -22,6 +22,7 @@ import { MinhaHortaComponent } from './minha-horta/minha-horta.component';
 import { LoginComponent } from './login/login.component';
 import { ConectionComponent } from './conection/conection.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { DownloadComponent } from './download/download.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RankingComponent } from './ranking/ranking.component';
     LoginComponent,
     ConectionComponent,
     RankingComponent,
+    DownloadComponent,
   ],
   imports: [
     CommonModule,

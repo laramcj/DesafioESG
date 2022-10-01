@@ -8,6 +8,17 @@ span {
 
 h2 {
   margin: auto 20px;
+  text-decoration: none;
+}
+
+a {
+  color: #3c5948;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #578067;
+  text-decoration: none;
 }
 
 button {

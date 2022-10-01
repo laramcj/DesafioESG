@@ -86,8 +86,8 @@
     background-color: #ECF0F1;
   }
   
-  .card_conexao {
-    height: 250px;
+  .card_planta {
+    height: 180px;
     width: 150px;
     background-color:#ffffff;
     border-radius:2px;
@@ -95,22 +95,29 @@
   }
   
   h4 {
-    margin-left: 20px;
-    margin-top: 5px;
     color: #3c5948;
+    margin-left: 40px;
+    margin-top: 5px;
   }
   
   img {
-    margin-left: 20px;
+    margin-top: -10px;
+    margin-left: 10px;
   }
   
-  p {
+  a {
     color: #578067;
     font-style: normal;
-    margin-left: 15px;
-    margin-top: 20px;
+    margin: 5px 35px;
+  }
+
+  .file-upload {
+    margin: 10px;
+    border-radius: 4px;
+    width: 228px;
+    align-self: center;
+    color: #578067;
   }
   
-  .podio {
-    margin-top: 5px;
-}
+  
+  
