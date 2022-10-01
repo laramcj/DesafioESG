@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ClientStorageService } from '../client-form/client-storage.service';
+import { Client } from '../client-form/client.model';
+import { ImovelStorageService } from '../imovel-form/imovel-storage.service';
+import { Imovel } from '../imovel-form/imovel.model';
+import { Weather } from '../imovel-form/weather/weather.model';
+import { WeatherService } from '../imovel-form/weather/weather.service';
 
 
 @Component({
@@ -10,34 +13,22 @@ import { ClientStorageService } from '../client-form/client-storage.service';
   styleUrls: ['./minha-horta.component.css']
 })
 export class MinhaHortaComponent implements OnInit {
-  private useNumber = '[0-9]*';
-  private letters = '[A-zÀ-ú ]+';
-
-  clientForm!: FormGroup;
+  client!: Client;
+  imovel!: Imovel;
+  initialInstallment!: number;
+  approvedValue!: number;
+  weather:Weather
 
   constructor(
-    private formbuilder: FormBuilder,
-    private clientStorage: ClientStorageService,
-    private router: Router
-  ) {}
+    private weatherService: WeatherService,
+    private imovelStorage: ImovelStorageService
+  ) {
+  }
 
   ngOnInit(): void {
-    this.buscarFormulario();
+    this.imovel = this.imovelStorage.getImovel();
+    this.weatherService.getWeather().subscribe(result => this.weather = result)
+    console.log("weather", this.weather)
+    console.log(this.imovel);
   }
-
-  private buscarFormulario() {
-    this.clientForm = this.formbuilder.group({
-      id: new FormControl(''),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      senha: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-      ]),
-    });
-  }
-
-  navigateLogin() {
-    this.router.navigate(['minha-horta']);
-  }
-
 }
