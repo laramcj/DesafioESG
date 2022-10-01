@@ -5,6 +5,7 @@ import { ClientFormComponent } from './client-form/client-form.component';
 import { DeniedComponent } from './denied/denied.component';
 import { ImovelFormComponent } from './imovel-form/imovel-form.component';
 import { InicialComponent } from './inicial/inicial.component';
+import { MinhaHortaComponent } from './minha-horta/minha-horta.component';
 
 const routes: Routes = [
   { path: '', component: InicialComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'imovel-form', component: ImovelFormComponent },
   { path: 'approved', component: ApprovedComponent },
   { path: 'denied', component: DeniedComponent },
+  { path: 'minha-horta', component: MinhaHortaComponent },
 ];
 
 @NgModule({
