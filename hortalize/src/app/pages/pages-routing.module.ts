@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'denied', component: DeniedComponent },
   { path: 'login', component: LoginComponent },
   { path: 'minha-horta', component: MinhaHortaComponent },
-  { path: 'conexoes', component: ConectionComponent },
+  { path: 'conection', component: ConectionComponent },
 ];
 
 @NgModule({
