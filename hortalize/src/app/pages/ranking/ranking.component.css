@@ -1,0 +1,116 @@
+.body {
+    width: auto;
+    padding: 16px;
+    background-color: #e5e5e5;
+    height: 100%;
+  }
+  
+  .aprovado {
+    font-size: 1.5em;
+    font-weight: 500;
+    color:#578067;
+  }
+  
+  .container {
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  h3 {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 3em;
+  }
+  
+  /* img {
+    margin: 16px auto;
+    align-self: center;
+  } */
+  
+  .status {
+    color: #578067;
+    text-align: center;
+  }
+  
+  ul {
+    align-self: center;
+  }
+  
+  .container li {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 17px;
+  }
+  
+  .container p{
+    color:#578067 ;
+  }
+  
+  button {
+    margin: 10px;
+    /* margin-top: 42px; */
+    border-radius: 4px;
+    width: 228px;
+    align-self: center;
+    
+  }
+  
+  .btn{
+    background:#578067;
+  }
+  
+  .btn-sem {
+    color: #578067;
+  }
+  
+  .btn-adiciona{
+    justify-content: end;
+  }
+  
+  .cards{
+    display: flex;
+    flex-direction: row;
+    /* margin-left:100px; */
+    margin:auto;
+    background-color: #ECF0F1;
+  }
+  
+  .card_conexao {
+    height: 250px;
+    width: 150px;
+    background-color:#ffffff;
+    border-radius:2px;
+    margin:40px; 
+  }
+  
+  h4 {
+    margin-left: 20px;
+    margin-top: 5px;
+    color: #578067;
+  }
+  
+  img {
+    margin-left: 20px;
+  }
+  
+  p {
+    color: #578067;
+    font-style: normal;
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+  
+  .podio {
+    margin-top: 5px;
+}

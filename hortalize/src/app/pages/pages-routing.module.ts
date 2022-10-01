@@ -8,6 +8,7 @@ import { ImovelFormComponent } from './imovel-form/imovel-form.component';
 import { InicialComponent } from './inicial/inicial.component';
 import { LoginComponent } from './login/login.component';
 import { MinhaHortaComponent } from './minha-horta/minha-horta.component';
+import { RankingComponent } from './ranking/ranking.component';
 
 const routes: Routes = [
   { path: '', component: InicialComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'minha-horta', component: MinhaHortaComponent },
   { path: 'conection', component: ConectionComponent },
+  { path: 'ranking', component: RankingComponent },
 ];
 
 @NgModule({

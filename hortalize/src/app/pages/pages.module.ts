@@ -21,6 +21,7 @@ import { ImovelFormComponent } from './imovel-form/imovel-form.component';
 import { MinhaHortaComponent } from './minha-horta/minha-horta.component';
 import { LoginComponent } from './login/login.component';
 import { ConectionComponent } from './conection/conection.component';
+import { RankingComponent } from './ranking/ranking.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ConectionComponent } from './conection/conection.component';
     MinhaHortaComponent,
     LoginComponent,
     ConectionComponent,
+    RankingComponent,
   ],
   imports: [
     CommonModule,
